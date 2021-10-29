@@ -4,12 +4,15 @@ import java.util.regex.Matcher;
 import java.time.LocalDate;
 import java.time.Period;
 
+<<<<<<< HEAD
 //fkn work already goddamn
 //pls just give us an A
 //omgegegegggeeeeeeeeeeeeeeee
 
 
 >>>>>>> 4d972b093e3101864d5e805c7fefd3ed1a177592
+=======
+>>>>>>> 7fc2582b9afe02477851633cbdaadd51dd1597c8
 public class MainApp {
 
     static Boolean checkEmail(String e){ //check email
