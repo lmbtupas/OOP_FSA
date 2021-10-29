@@ -4,6 +4,8 @@ import java.util.regex.Matcher;
 import java.time.LocalDate;
 import java.time.Period;
 
+//fkn work already goddamn
+
 public class MainApp {
 
     static Boolean checkEmail(String e){ //check email
