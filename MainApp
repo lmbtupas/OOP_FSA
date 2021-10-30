@@ -100,22 +100,28 @@ public class MainApp {
 
         System.out.print("Eneter your first name: ");
         fn = in.next() +" ";
+
         System.out.print("Eneter your middle initial: ");
         mi = in.next() +" ";
+
         System.out.print("Eneter your last name: ");
         ln = in.next() +" ";
+
         System.out.print("Eneter your Bithdate: ");
         in.useDelimiter("\\s*,\\s*|\\s+");
+
         mon = in.next();
         d = in.nextInt();
         y = in.nextInt();
         a=age(convertMonth(mon),d,y);
+
         while(a<=0){ //chech if valid date
             System.out.print("Invalid date, please re-enter: ");
             mon = in.next();
             d = in.nextInt();
             y = in.nextInt();
             a=age(convertMonth(mon),d,y);}
+            
         in.reset();
         System.out.print("Eneter the number of people in your household: ");
         ppl = in.nextInt();
