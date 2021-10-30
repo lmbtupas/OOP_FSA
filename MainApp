@@ -3,7 +3,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.time.LocalDate;
 import java.time.Period;
-
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 
 public class MainApp {
@@ -92,7 +94,7 @@ public class MainApp {
     
     public static void main(String args[]){
         Scanner in = new Scanner(System.in);
-        String fn,mi,ln,mon,g,add,cn,e,p,w, h="",h2="their ",h3="them ";
+        String fn,mi,ln,mon,g,add,cn,e,p,w, h="", h2="their ", h3="them ";
         int d,y,a,ppl;
         float as;
 
