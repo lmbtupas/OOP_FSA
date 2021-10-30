@@ -108,7 +108,7 @@ public class MainApp {
         d = in.nextInt();
         y = in.nextInt();
         a=age(convertMonth(mon),d,y);
-        while(a<=0){ //chech if date is valid
+        while(a<=0){ //chech if valid date
             System.out.print("Invalid date, please re-enter: ");
             mon = in.next();
             d = in.nextInt();
@@ -126,22 +126,22 @@ public class MainApp {
         add = in.next();
         System.out.print("Eneter your contact number: ");
         cn = in.next();
-        while(!checkN(cn)){
+        while(!checkN(cn)){ //check if valid number
             System.out.print("Invalid number, please re-enter: ");
             cn = in.next();}
         System.out.print("Eneter your email: ");
         e = in.next();
-        while(!checkEmail(e)){
+        while(!checkEmail(e)){ //check if valid email
             System.out.print("Invalid email, please re-enter: ");
             e = in.next();}
         System.out.print("Eneter your password: ");
         p = in.next();
-        while(!checkPass(p)){
+        while(!checkPass(p)){ //check if valid password
             System.out.print("Invalid password, please re-enter: ");
             p = in.next();}
         System.out.print("Eneter your website: ");
         w = in.next();
-        while(!checkWeb(w)){
+        while(!checkWeb(w)){ //check if valid website url
             System.out.print("Invalid website URL, please re-enter: ");
             w = in.next();}
 
