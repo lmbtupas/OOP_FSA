@@ -41,7 +41,7 @@ public class MainApp {
                 break; //exit program
             }
         }
-
+        in.close();
         
 
     }
