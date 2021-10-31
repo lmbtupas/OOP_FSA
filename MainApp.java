@@ -38,6 +38,7 @@ public class MainApp {
                 pplForm.updateForm(); //update form
             }
             else if (number == 4){
+                System.out.println("Thank for using this program! Goodbye!");
                 break; //exit program
             }
         }
