@@ -168,16 +168,16 @@ public class Form {
                 break;
             }
         in.close();
-        System.out.print("\nWelcome, "+h+fn+mi+ln+"to our system. ");
-        System.out.print("Your birthdate is "+mon+" "+d +", "+y+", and you are "+a+ " years old, ");
-        System.out.print("your gender is "+g+" and you reside in " + add);
-        System.out.print(". The total number of people in your household is "+ppl);
+        System.out.print("\nWelcome, " + h + fn + mi + ln + "to our system. ");
+        System.out.print("Your birthdate is " + mon + " " + d + ", " + y + ", and you are " + a + " years old, ");
+        System.out.print("your gender is " + g + " and you reside in " + add);
+        System.out.print(". The total number of people in your household is " + ppl);
         System.out.print(String.format(" and your annual salary is Php %,.2f",as)); 
-        System.out.print(". \nFor inquiries of "+h2+"IT services, please contact "+h3);
-        System.out.print("at "+cn+" or send an email to "+e+ ". You can also check ");
-        System.out.println(h2+"website at "+e+".");
-        System.out.println("User Account: "+e);
-        System.out.println("Password: "+p);
+        System.out.print(". \nFor inquiries of " + h2 + "IT services, please contact " + h3);
+        System.out.print("at " + cn + " or send an email to " + e + ". You can also check ");
+        System.out.println(h2 + "website at " + e + ".");
+        System.out.println("User Account: " + e);
+        System.out.println("Password: " + p);
     }
 
 
