@@ -11,6 +11,7 @@ public class Form {
     
     String formsList[][] = new String[5][18]; // the 2d array that will list of forms and thei infos
 
+//VALIDATION CHECKERS ==========================================================================================
 
     private Boolean checkEmail(String e){ //check email **************
         Pattern p = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
@@ -91,6 +92,8 @@ public class Form {
             return 0; 
         }
     }
+
+//FORM CREATOR ====================================================================================================
 
     //create a form
     public void createForm(){
