@@ -12,8 +12,6 @@ public class MainApp {
         System.out.println("4 - Exit program");
         System.out.println("==================");
     }
-
-
     
     public static void main(String args[]){
 

@@ -1,15 +1,13 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.time.LocalDate;
 import java.time.Period;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
 
 public class Form {
     
-    String formsList[][] = new String[5][18]; // the 2d array that will list of forms and thei infos
+    String formsList[][] = new String[5][15]; // the 2d array that will list of forms and thei infos
 
 //VALIDATION CHECKERS ==========================================================================================
 
@@ -98,8 +96,8 @@ public class Form {
     //create a form
     public void createForm(){
         //the variables in a form
-        String fn,mi,ln,mon,g,add,cn,e,p,w, h="", h2="their ", h3="them ";
-        int d,y,a,ppl;
+        String fn, mi,ln, mon, g, add, cn, e, p, w, h = "", h2 = "their ", h3 = "them ";
+        int d, y, a, ppl;
         float as;
         Scanner in = new Scanner(System.in);
 
@@ -193,6 +191,24 @@ public class Form {
         System.out.println(h2 + "website at " + e + ".");
         System.out.println("User Account: " + e);
         System.out.println("Password: " + p);
+
+        formsList [0][0] = fn;
+        formsList [0][1] = mi;
+        formsList [0][2] = ln;
+        formsList [0][3] = mon;
+        formsList [0][4] = String.valueOf(d);
+        formsList [0][5] = String.valueOf(y);
+        formsList [0][6] = String.valueOf(a);
+        formsList [0][7] = g;
+        formsList [0][8] = add;
+        formsList [0][9] = String.valueOf(ppl);
+        formsList [0][10] = String.valueOf(as);
+        formsList [0][11] = String.valueOf(cn);
+        formsList [0][13] = e; 
+        formsList [0][14] = p;
+
+        System.out.println(Arrays.deepToString(formsList));
+
     }
 
 
