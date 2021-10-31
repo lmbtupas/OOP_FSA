@@ -17,14 +17,30 @@ public class MainApp {
 
         Scanner in = new Scanner(System.in);
         int number = 0;
+        Form pplForm = new Form(); //create Form object
 
-        while(number != 4){ //as long as user does not exit program keep goin
+        try{
+            pplForm.readFileToArr();
+            System.out.println("read");
+        }catch(Exception e){
+            System.out.println(e);
+            System.out.println("No file");
+        }
+
+        while(number !=4){ //as long as user does not exit program keep goin
             
             showMenu();
-            number = in.nextInt(); //get number input of customer
-            System.out.println("==================");
-
-            Form pplForm = new Form(); //create Form object
+            number = in.nextInt(); //there is something wrong with this????
+            // while(in.hasNext()){
+            //     if(in.hasNextInt()){
+            //         number = in.nextInt();
+            //         break;
+            //     }
+            // }
+            
+            
+             //get number input of customer
+            System.out.println("tsk==================");
 
             if(number == 1){
                 pplForm.createForm(); //create form
@@ -42,6 +58,13 @@ public class MainApp {
         }
         in.close();
         
+        try{
+            pplForm.saveToFile();
+        }catch(Exception e){
+            System.out.println(e);
+            System.out.println("Error saving file");
+        }
+
 
     }
 

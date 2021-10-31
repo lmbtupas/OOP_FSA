@@ -2,6 +2,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -191,26 +196,70 @@ public class Form {
         System.out.println(h2 + "website at " + e + ".");
         System.out.println("User Account: " + e);
         System.out.println("Password: " + p);
+        
+        int formNum=0;
+        for(int i=0;i<formsList.length;i++){
+            if(formsList[i][0].equals("null")){
+                formNum=i;
+            }
+        }
 
-        formsList [0][0] = fn;
-        formsList [0][1] = mi;
-        formsList [0][2] = ln;
-        formsList [0][3] = mon;
-        formsList [0][4] = String.valueOf(d);
-        formsList [0][5] = String.valueOf(y);
-        formsList [0][6] = String.valueOf(a);
-        formsList [0][7] = g;
-        formsList [0][8] = add;
-        formsList [0][9] = String.valueOf(ppl);
-        formsList [0][10] = String.valueOf(as);
-        formsList [0][11] = String.valueOf(cn);
-        formsList [0][13] = e; 
-        formsList [0][14] = p;
+        formsList [formNum][0] = fn;
+        formsList [formNum][1] = mi;
+        formsList [formNum][2] = ln;
+        formsList [formNum][3] = mon;
+        formsList [formNum][4] = String.valueOf(d);
+        formsList [formNum][5] = String.valueOf(y);
+        formsList [formNum][6] = String.valueOf(a);
+        formsList [formNum][7] = g;
+        formsList [formNum][8] = add;
+        formsList [formNum][9] = String.valueOf(ppl);
+        formsList [formNum][10] = String.valueOf(as);
+        formsList [formNum][11] = String.valueOf(cn);
+        formsList [formNum][13] = e; 
+        formsList [formNum][14] = p;
 
-        System.out.println(Arrays.deepToString(formsList));
+        for(String[] r:formsList){ //prints forms array
+            for(String c:r){
+                System.out.print(c+" ");
+            }
+            System.out.println();
+        }
 
     }
 
+    public void saveToFile() throws IOException{ //save the array of forms to a text file
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < formsList.length; i++){ //for each row
+            for(int j = 0; j < formsList[i].length; j++){ //for each column
+                builder.append(formsList[i][j]+""); //append to the output string
+                if(j < formsList[i].length - 1) //if this is not the last row element
+                    builder.append(","); //then add comma (if you don't like commas you can use spaces)
+            }
+            builder.append("\n");//append new line at the end of the row
+        }
+        BufferedWriter writer = new BufferedWriter(new FileWriter("saveFile.txt"));
+        writer.write(builder.toString());//save the string representation of the board
+        writer.close();
+    }
+
+    public void readFileToArr() throws IOException{ //read the text file and transfer infos to array
+        BufferedReader reader = new BufferedReader(new FileReader("saveFile.txt"));
+        String line = "";
+        int row = 0;
+        while((line = reader.readLine()) != null){
+            String[] cols = line.split(","); //note that if you have used space as separator you have to split on " "
+            int col = 0;
+            for(String  c : cols){
+                if(c.equals("null")){
+                    formsList[row][col] = null;
+                }else{
+                    formsList[row][col] = c;
+                }
+                col++;}
+            row++;}
+        reader.close();
+    }
 
     //display a form in a text file
     public void displayForm() {
@@ -220,17 +269,17 @@ public class Form {
         //Menu for picking saved forms
         System.out.println("==================");
         System.out.println("Please choose which form you want to be displayed.");
-        System.out.println("1: ");
-        System.out.println("2: ");
-        System.out.println("3: ");
-        System.out.println("4: ");
+        for(int i=0;i<formsList.length;i++){
+            if(formsList[i][0]!=null){ //checks if there is a form
+                System.out.println("Form "+String.valueOf(i+1)); //show form num if form exists
+            }
+        }
         System.out.println("5 - Exit");
         System.out.println("==================");
 
         while (choice != 5) { //Picks which user has a saved file
 
             choice = sc.nextInt();
-
             if (choice == 1) {
                 break;
             } 
@@ -248,13 +297,13 @@ public class Form {
             }
 
             else if (choice == 5) { //goes back to main menu
-                System.out.println("Going back to Main Menu.");
-                MainApp.main(null);
                 break;
             }
 
         }
+        sc.nextLine();
         sc.close();
+        System.out.println("exit display func");
     }
 
     //update a form
