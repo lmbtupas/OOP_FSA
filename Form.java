@@ -100,16 +100,16 @@ public class Form {
         float as;
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Eneter your first name: ");
+        System.out.print("Enter your first name: ");
         fn = in.next() +" ";
 
-        System.out.print("Eneter your middle initial: ");
+        System.out.print("Enter your middle initial: ");
         mi = in.next() +" ";
 
-        System.out.print("Eneter your last name: ");
+        System.out.print("Enter your last name: ");
         ln = in.next() +" ";
 
-        System.out.print("Eneter your Bithdate: ");
+        System.out.print("Enter your Bithdate: ");
         in.useDelimiter("\\s*,\\s*|\\s+");
 
         mon = in.next();
@@ -125,31 +125,31 @@ public class Form {
             a=age(convertMonth(mon),d,y);}
             
         in.reset();
-        System.out.print("Eneter the number of people in your household: ");
+        System.out.print("Enter the number of people in your household: ");
         ppl = in.nextInt();
         in.nextLine();
-        System.out.print("Eneter your annual salary: ");
+        System.out.print("Enter your annual salary: ");
         as = Float.valueOf(in.nextLine().replaceAll(",",""));
-        System.out.print("Eneter your gender: ");
+        System.out.print("Enter your gender: ");
         g = in.next();
-        System.out.print("Eneter your address: ");
+        System.out.print("Enter your address: ");
         add = in.next();
-        System.out.print("Eneter your contact number: ");
+        System.out.print("Enter your contact number: ");
         cn = in.next();
         while(!checkN(cn)){ //check if valid number
             System.out.print("Invalid number, please re-enter: ");
             cn = in.next();}
-        System.out.print("Eneter your email: ");
+        System.out.print("Enter your email: ");
         e = in.next();
         while(!checkEmail(e)){ //check if valid email
             System.out.print("Invalid email, please re-enter: ");
             e = in.next();}
-        System.out.print("Eneter your password: ");
+        System.out.print("Enter your password: ");
         p = in.next();
         while(!checkPass(p)){ //check if valid password
             System.out.print("Invalid password, please re-enter: ");
             p = in.next();}
-        System.out.print("Eneter your website: ");
+        System.out.print("Enter your website: ");
         w = in.next();
         while(!checkWeb(w)){ //check if valid website url
             System.out.print("Invalid website URL, please re-enter: ");
@@ -157,14 +157,15 @@ public class Form {
 
             switch(g.toLowerCase()){
                 case "male":
-                h="Mr. ";
+                h = "Mr. ";
                 h2 ="his ";
                 h3 ="him ";
                 break;
+
                 case "female":
-                h="Ms. ";
-                h2 ="her ";
-                h3 =h2;
+                h = "Ms. ";
+                h2 = "her ";
+                h3 = h2;
                 break;
             }
         in.close();
