@@ -131,29 +131,40 @@ public class Form {
         System.out.print("Enter the number of people in your household: ");
         ppl = in.nextInt();
         in.nextLine();
+
         System.out.print("Enter your annual salary: ");
         as = Float.valueOf(in.nextLine().replaceAll(",",""));
+
         System.out.print("Enter your gender: ");
         g = in.next();
+
         System.out.print("Enter your address: ");
         add = in.next();
+
         System.out.print("Enter your contact number: ");
         cn = in.next();
+
         while(!checkN(cn)){ //check if valid number
             System.out.print("Invalid number, please re-enter: ");
             cn = in.next();}
+
         System.out.print("Enter your email: ");
         e = in.next();
+
         while(!checkEmail(e)){ //check if valid email
             System.out.print("Invalid email, please re-enter: ");
             e = in.next();}
+
         System.out.print("Enter your password: ");
         p = in.next();
+
         while(!checkPass(p)){ //check if valid password
             System.out.print("Invalid password, please re-enter: ");
             p = in.next();}
+
         System.out.print("Enter your website: ");
         w = in.next();
+
         while(!checkWeb(w)){ //check if valid website url
             System.out.print("Invalid website URL, please re-enter: ");
             w = in.next();}
@@ -185,9 +196,49 @@ public class Form {
     }
 
 
-    //display a form
-    public void displayForm(){
+    //display a form in a text file
+    public void displayForm() {
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
 
+        //Menu for picking saved forms
+        System.out.println("==================");
+        System.out.println("Please choose which form you want to be displayed.");
+        System.out.println("1: ");
+        System.out.println("2: ");
+        System.out.println("3: ");
+        System.out.println("4: ");
+        System.out.println("5 - Exit");
+        System.out.println("==================");
+
+        while (choice != 5) { //Picks which user has a saved file
+
+            choice = sc.nextInt();
+
+            if (choice == 1) {
+                break;
+            } 
+
+            else if (choice == 2) {
+                break;
+            } 
+
+            else if (choice == 3) {
+                break;
+            }
+
+            else if (choice == 4) {
+                break;
+            }
+
+            else if (choice == 5) { //goes back to main menu
+                System.out.println("Going back to Main Menu.");
+                MainApp.main(null);
+                break;
+            }
+
+        }
+        sc.close();
     }
 
     //update a form
