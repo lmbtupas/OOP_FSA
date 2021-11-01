@@ -34,7 +34,7 @@ public class MainApp {
             
             
              //get number input of customer
-            System.out.println("tsk==================");
+            System.out.println("==================");
 
             if(number == 1){
                 pplForm.createForm(); //create form

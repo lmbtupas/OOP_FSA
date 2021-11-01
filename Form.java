@@ -12,7 +12,7 @@ import java.time.Period;
 
 public class Form {
     
-    String formsList[][] = new String[5][15]; // the 2d array that will list of forms and thei infos
+    String formsList[][] = new String[5][14]; // the 2d array that will list of forms and thei infos
 
 //VALIDATION CHECKERS ==========================================================================================
 
@@ -197,10 +197,10 @@ public class Form {
         System.out.println("User Account: " + e);
         System.out.println("Password: " + p);
         
-        int formNum=0;
-        for(int i=0;i<formsList.length;i++){
-            if(formsList[i][0].equals("null")){
-                formNum=i;
+        int formNum = 0;
+        for(int i = 0; i < formsList.length; i++){
+            if(formsList[i][0] == null){
+                formNum = i;
             }
         }
 
@@ -216,23 +216,22 @@ public class Form {
         formsList [formNum][9] = String.valueOf(ppl);
         formsList [formNum][10] = String.valueOf(as);
         formsList [formNum][11] = String.valueOf(cn);
-        formsList [formNum][13] = e; 
-        formsList [formNum][14] = p;
+        formsList [formNum][12] = e; 
+        formsList [formNum][13] = p;
 
         for(String[] r:formsList){ //prints forms array
             for(String c:r){
-                System.out.print(c+" ");
+                System.out.print(c + " ");
             }
             System.out.println();
         }
-
     }
 
     public void saveToFile() throws IOException{ //save the array of forms to a text file
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i < formsList.length; i++){ //for each row
             for(int j = 0; j < formsList[i].length; j++){ //for each column
-                builder.append(formsList[i][j]+""); //append to the output string
+                builder.append(formsList[i][j] +  ""); //append to the output string
                 if(j < formsList[i].length - 1) //if this is not the last row element
                     builder.append(","); //then add comma (if you don't like commas you can use spaces)
             }
@@ -250,7 +249,7 @@ public class Form {
         while((line = reader.readLine()) != null){
             String[] cols = line.split(","); //note that if you have used space as separator you have to split on " "
             int col = 0;
-            for(String  c : cols){
+            for(String  c:cols){
                 if(c.equals("null")){
                     formsList[row][col] = null;
                 }else{
@@ -269,9 +268,9 @@ public class Form {
         //Menu for picking saved forms
         System.out.println("==================");
         System.out.println("Please choose which form you want to be displayed.");
-        for(int i=0;i<formsList.length;i++){
-            if(formsList[i][0]!=null){ //checks if there is a form
-                System.out.println("Form "+String.valueOf(i+1)); //show form num if form exists
+        for(int i = 0; i < formsList.length; i++){
+            if(formsList[i][0] != null){ //checks if there is a form
+                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
             }
         }
         System.out.println("5 - Exit");
