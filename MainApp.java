@@ -9,7 +9,8 @@ public class MainApp {
         System.out.println("1 - Create form");
         System.out.println("2 - Display form");
         System.out.println("3 - Update form");
-        System.out.println("4 - Exit program");
+        System.out.println("4 - Delete form"); 
+        System.out.println("5 - Exit program");
         System.out.println("==================");
     }
     
@@ -58,7 +59,16 @@ public class MainApp {
                     pplForm.updateForm(); //update form
                 }                
             }
+
             else if (number == 4){
+                if(pplForm.checkIfArrayEmpty()){
+                    System.out.println("No forms to delete.");
+                }else{
+                    pplForm.deleteForm(); //update form
+                }     
+            }
+
+            else if (number == 5){
                 System.out.println("Thank for using this program! Goodbye!");
                 break; //exit program
             }
