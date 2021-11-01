@@ -45,6 +45,7 @@ public class MainApp {
                 }
                 
             }
+            
             else if (number == 2){
                 if(pplForm.checkIfArrayEmpty()){
                     System.out.println("No forms to display.");
@@ -52,6 +53,7 @@ public class MainApp {
                     pplForm.displayForm(); //display form
                 }                
             }
+
             else if (number == 3){
                 if(pplForm.checkIfArrayEmpty()){
                     System.out.println("No forms to update.");
