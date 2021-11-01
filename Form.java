@@ -96,6 +96,23 @@ public class Form {
         }
     }
 
+    public Boolean checkIfArrayFull(){
+        if(formsList[3][0]!=null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public Boolean checkIfArrayEmpty(){
+        if(formsList[0][0]==null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 //FORM CREATOR ====================================================================================================
 
     //create a form
@@ -197,13 +214,14 @@ public class Form {
         System.out.println("User Account: " + e);
         System.out.println("Password: " + p);
         
-        int formNum = 0;
-        for(int i = 0; i < formsList.length; i++){
+        int formNum = 4; //this row reserved for update func
+        for(int i = 0; i < 4; i++){ //up to 4 forms only, 5th is reserved for update
             if(formsList[i][0] == null){
                 formNum = i;
+                break;
             }
         }
-
+        //need code for when array is full
         formsList [formNum][0] = fn;
         formsList [formNum][1] = mi;
         formsList [formNum][2] = ln;
@@ -273,39 +291,65 @@ public class Form {
                 System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
             }
         }
-        System.out.println("5 - Exit");
+        System.out.println("6 - Exit");
         System.out.println("==================");
+        choice = sc.nextInt(); 
 
-        while (choice != 5) { //Picks which user has a saved file
+        //incomplete code
+        if (choice == 1) {
+        } 
 
-            choice = sc.nextInt();
-            if (choice == 1) {
-                break;
-            } 
+        else if (choice == 2) {
+        } 
 
-            else if (choice == 2) {
-                break;
-            } 
-
-            else if (choice == 3) {
-                break;
-            }
-
-            else if (choice == 4) {
-                break;
-            }
-
-            else if (choice == 5) { //goes back to main menu
-                break;
-            }
-
+        else if (choice == 3) {
         }
+
+        else if (choice == 4) {
+        }
+
+        else if (choice == 5) { //goes back to main menu
+            //i think pwede na ito idelete na else if??? since mag exit mn isya func???
+        }
+        
+
+
         System.out.println("exit display func");
     }
 
     //update a form
     public void updateForm(){
+        int choice = 0;
+        Scanner sc = new Scanner(System.in);
 
+        //Menu for picking saved forms
+        System.out.println("==================");
+        System.out.println("Please choose which form you want to update.");
+        for(int i = 0; i < formsList.length; i++){
+            if(formsList[i][0] != null){ //checks if there is a form
+                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
+            }
+        }
+        System.out.println("5 - Exit");
+        System.out.println("==================");
+        choice = sc.nextInt();
+
+        if(choice !=5){
+            createForm();
+            for(int i=4; i>=0;i--){
+                if(formsList[i][0] !=null){
+                    formsList[choice-1]=formsList[i];
+                    for(int j=0; j>formsList[i].length;j++){
+                        formsList[i][j]=null;
+                    }
+                    System.out.println("Form "+choice+" is successfully updated!");
+                    break;
+                }
+            }
+        }
     }
+
+
+    
     
 }

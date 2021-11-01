@@ -37,15 +37,26 @@ public class MainApp {
             System.out.println("==================");
 
             if(number == 1){
-                pplForm.createForm(); //create form
+                if(pplForm.checkIfArrayFull()){
+                    System.out.println("Maximum number of forms reached. Cannot create form.");
+                }else{
+                    pplForm.createForm(); //create form
+                }
+                
             }
             else if (number == 2){
-                pplForm.displayForm(); //display form
-                System.out.println("hmmm");
+                if(pplForm.checkIfArrayEmpty()){
+                    System.out.println("No forms to display.");
+                }else{
+                    pplForm.displayForm(); //display form
+                }                
             }
             else if (number == 3){
-                pplForm.updateForm(); //update form
-                System.out.println("hm");
+                if(pplForm.checkIfArrayEmpty()){
+                    System.out.println("No forms to update.");
+                }else{
+                    pplForm.updateForm(); //update form
+                }                
             }
             else if (number == 4){
                 System.out.println("Thank for using this program! Goodbye!");
