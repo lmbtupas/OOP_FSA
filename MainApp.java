@@ -30,13 +30,7 @@ public class MainApp {
         while(number !=4){ //as long as user does not exit program keep goin
             
             showMenu();
-            number = in.nextInt(); //there is something wrong with this????
-            // while(in.hasNext()){
-            //     if(in.hasNextInt()){
-            //         number = in.nextInt();
-            //         break;
-            //     }
-            // }
+            number = in.nextInt(); 
             
             
              //get number input of customer
@@ -47,9 +41,11 @@ public class MainApp {
             }
             else if (number == 2){
                 pplForm.displayForm(); //display form
+                System.out.println("hmmm");
             }
             else if (number == 3){
                 pplForm.updateForm(); //update form
+                System.out.println("hm");
             }
             else if (number == 4){
                 System.out.println("Thank for using this program! Goodbye!");

@@ -185,7 +185,7 @@ public class Form {
                 h3 = h2;
                 break;
             }
-        in.close();
+        
         System.out.print("\nWelcome, " + h + fn + mi + ln + "to our system. ");
         System.out.print("Your birthdate is " + mon + " " + d + ", " + y + ", and you are " + a + " years old, ");
         System.out.print("your gender is " + g + " and you reside in " + add);
@@ -301,8 +301,6 @@ public class Form {
             }
 
         }
-        sc.nextLine();
-        sc.close();
         System.out.println("exit display func");
     }
 
