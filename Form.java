@@ -278,6 +278,15 @@ public class Form {
         reader.close();
     }
 
+    public void deleteForm() {
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
+
+        
+
+
+    }
+
     //display a form in a text file
     public void displayForm() {
         Scanner sc = new Scanner(System.in);
