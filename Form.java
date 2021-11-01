@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -281,10 +280,6 @@ public class Form {
     public void deleteForm() {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
-
-        
-
-
     }
 
     //display a form in a text file
