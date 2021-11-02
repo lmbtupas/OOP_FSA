@@ -104,11 +104,11 @@ public class Form {
         }
     }
 
-    public Boolean checkIfArrayEmpty(){
-        if(formsList[0][0]==null){
+    public Boolean checkIfArrayEmpty() { //Need to fix code to check if all rows in array are null
+        if(formsList[0][0] == null) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
@@ -278,8 +278,31 @@ public class Form {
     }
 
     public void deleteForm() {
+        MainApp menu = new MainApp();
+
         Scanner sc = new Scanner(System.in);
         int choice = 0;
+
+        System.out.println("==================");
+        System.out.println("Please choose which form you want to be deleted");
+
+        for(int i = 0; i < formsList.length; i++){
+            if(formsList[i][0] != null){ //checks if there is a form
+                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
+            }
+        }       
+
+        System.out.println("6 - Exit");
+        System.out.println("==================");
+        choice = sc.nextInt(); 
+
+        for (int i = 0; i < formsList.length; i++) {
+            for (int j = 0; j < formsList[i].length; j++) {
+                formsList[choice][j] = null;
+            }
+        }
+        sc.close();
+        System.out.println("Deleted! Going back to Main Menu");
     }
 
     //display a form in a text file
@@ -298,25 +321,6 @@ public class Form {
         System.out.println("6 - Exit");
         System.out.println("==================");
         choice = sc.nextInt(); 
-
-        //incomplete code
-        if (choice == 1) {
-        } 
-
-        else if (choice == 2) {
-        } 
-
-        else if (choice == 3) {
-        }
-
-        else if (choice == 4) {
-        }
-
-        else if (choice == 5) { //goes back to main menu
-            //i think pwede na ito idelete na else if??? since mag exit mn isya func???
-        }
-        
-
 
         System.out.println("exit display func");
     }
@@ -338,19 +342,20 @@ public class Form {
         System.out.println("==================");
         choice = sc.nextInt();
 
-        if(choice !=5){
+        if(choice != 5){
             createForm();
-            for(int i=4; i>=0;i--){
-                if(formsList[i][0] !=null){
-                    formsList[choice-1]=formsList[i];
-                    for(int j=0; j>formsList[i].length;j++){
-                        formsList[i][j]=null;
+            for(int i = 4; i >= 0; i--){
+                if(formsList[i][0] != null){
+                    formsList[choice - 1] = formsList[i];
+                    for(int j = 0; j > formsList[i].length; j++){
+                        formsList[i][j] = null;
                     }
-                    System.out.println("Form "+choice+" is successfully updated!");
+                    System.out.println("Form " + choice + " is successfully updated!");
                     break;
                 }
             }
         }
+        sc.close();
     }
 
 
