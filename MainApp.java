@@ -13,7 +13,7 @@ public class MainApp {
         System.out.println("5 - Exit program");
         System.out.println("==================");
     }
-    
+
     public static void main(String args[]){
 
         Scanner in = new Scanner(System.in);
@@ -41,8 +41,7 @@ public class MainApp {
                     System.out.println("Maximum number of forms reached. Cannot create form.");
                 }else{
                     pplForm.createForm(); //create form
-                }
-                
+                }   
             }
             
             else if (number == 2){
@@ -76,9 +75,9 @@ public class MainApp {
         }
         in.close();
         
-        try{
+        try {
             pplForm.saveToFile();
-        }catch(Exception e){
+        } catch(Exception e){
             System.out.println(e);
             System.out.println("Error saving file");
         }

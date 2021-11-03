@@ -1,4 +1,4 @@
-Yancy ,B. ,Tupas ,October,3,2001,20,Male,Davao,3,10000.0,123456789,tupas@yahoo.com,Yancy100301!!!,Mr. ,his ,him 
+null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
 null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
 null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
 null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
