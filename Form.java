@@ -103,15 +103,18 @@ public class Form {
             return false;
         }
     }
-
-    public Boolean checkIfArrayEmpty() { //Need to fix code to check if all rows in array are null
-        if(formsList[0][0] == null) {
-            return true;
+    
+    public Boolean checkIfArrayEmpty() {
+        for(int i = 0; i < formsList.length; i++) {
+            for(int j = 0; j < formsList[i].length; j++) {
+                if(formsList[i][j] != null) {
+                    return false;
+                }
+            }
         }
-        else {
-            return false;
-        }
+        return true;
     }
+
 //FORM CREATOR ====================================================================================================
 
     //create a form
