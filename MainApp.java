@@ -28,11 +28,10 @@ public class MainApp {
             System.out.println("No file");
         }
 
-        while(number !=4){ //as long as user does not exit program keep goin
+        while(number != 4){ //as long as user does not exit program keep goin
             
             showMenu();
             number = in.nextInt(); 
-            
             
              //get number input of customer
             System.out.println("==================");
@@ -83,8 +82,5 @@ public class MainApp {
             System.out.println(e);
             System.out.println("Error saving file");
         }
-
-
     }
-
 }

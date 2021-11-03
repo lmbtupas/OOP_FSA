@@ -11,7 +11,7 @@ import java.time.Period;
 
 public class Form {
     
-    String formsList[][] = new String[5][14]; // the 2d array that will list of forms and thei infos
+    String formsList[][] = new String[5][17]; // the 2d array that will list of forms and thei infos
 
 //VALIDATION CHECKERS ==========================================================================================
 
@@ -47,7 +47,7 @@ public class Form {
         Matcher v2 = p2.matcher(pass);
         Matcher v3 = p3.matcher(pass);
 
-        if(pass.length()>=8 && v.find()&& v2.find()&& v3.find()){
+        if(pass.length() >= 8 && v.find()&& v2.find()&& v3.find()){
             return true;
         }
         return false;
@@ -96,7 +96,7 @@ public class Form {
     }
 
     public Boolean checkIfArrayFull(){
-        if(formsList[3][0]!=null){
+        if(formsList[0][0]!= null){
             return true;
         }
         else{
@@ -235,6 +235,10 @@ public class Form {
         formsList [formNum][11] = String.valueOf(cn);
         formsList [formNum][12] = e; 
         formsList [formNum][13] = p;
+        formsList [formNum][14] = h;
+        formsList [formNum][15] = h2;
+        formsList [formNum][16] = h3;
+
 
         for(String[] r:formsList){ //prints forms array
             for(String c:r){
@@ -288,7 +292,7 @@ public class Form {
 
         for(int i = 0; i < formsList.length; i++){
             if(formsList[i][0] != null){ //checks if there is a form
-                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
+                System.out.println("Form " + String.valueOf(i)); //show form num if form exists
             }
         }       
 
@@ -296,9 +300,9 @@ public class Form {
         System.out.println("==================");
         choice = sc.nextInt(); 
 
-        for (int i = 0; i < formsList.length; i++) {
-            for (int j = 0; j < formsList[i].length; j++) {
-                formsList[choice][j] = null;
+        for (int i = 0; i < formsList.length; i++) { //count all the rows
+            for (int j = 0; j < formsList[i].length; j++) { //count the columns in the row
+                formsList[choice][j] = null; //Turns all the values in the form to null
             }
         }
         sc.close();
@@ -315,14 +319,29 @@ public class Form {
         System.out.println("Please choose which form you want to be displayed.");
         for(int i = 0; i < formsList.length; i++){
             if(formsList[i][0] != null){ //checks if there is a form
-                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
+                System.out.println("Form " + String.valueOf(i)); //show form num if form exists
             }
         }
         System.out.println("6 - Exit");
         System.out.println("==================");
         choice = sc.nextInt(); 
 
-        System.out.println("exit display func");
+        System.out.println("Displaying Form: " + String.valueOf(choice));
+
+        System.out.print("\nWelcome, " + formsList[choice][14] + formsList[choice][0] + formsList[choice][1] + formsList[choice][2] + "to our system. ");
+        System.out.print("Your birthdate is " + formsList[choice][3] + " " + formsList[choice][4] + ", " + formsList[choice][5] + ", and you are " + formsList[choice][6] + " years old, ");
+        System.out.print("your gender is " + formsList[choice][7] + " and you reside in " + formsList[choice][8]);
+        System.out.print(". The total number of people in your household is " + formsList[choice][9]);
+        System.out.print(String.format(" and your annual salary is Php %,.2f",formsList[choice][10])); 
+        System.out.print(". \nFor inquiries of " + formsList[choice][15] + "IT services, please contact " + formsList[choice][16]);
+        System.out.print("at " + formsList[choice][11] + " or send an email to " + formsList[choice][12] + ". You can also check ");
+        System.out.println(formsList[choice][15] + "website at " + formsList[choice][12] + ".");
+        System.out.println("User Account: " + formsList[choice][12]);
+        System.out.println("Password: " + formsList[choice][13]);        
+
+        if(choice == 6){
+            System.out.println("Going back to Main Menu");
+        }
     }
 
     //update a form
@@ -335,7 +354,7 @@ public class Form {
         System.out.println("Please choose which form you want to update.");
         for(int i = 0; i < formsList.length; i++){
             if(formsList[i][0] != null){ //checks if there is a form
-                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
+                System.out.println("Form " + String.valueOf(i)); //show form num if form exists
             }
         }
         System.out.println("5 - Exit");
@@ -356,9 +375,5 @@ public class Form {
             }
         }
         sc.close();
-    }
-
-
-    
-    
+    }    
 }
