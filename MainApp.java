@@ -28,7 +28,7 @@ public class MainApp {
             System.out.println("No file");
         }
 
-        while(number != 4){ //as long as user does not exit program keep goin
+        while(number != 5){ //as long as user does not exit program keep goin
             
             showMenu();
             number = in.nextInt(); 
@@ -38,7 +38,7 @@ public class MainApp {
 
             if(number == 1){
                 if(pplForm.checkIfArrayFull()){
-                    System.out.println("Maximum number of forms reached. Cannot create form.");
+                    System.out.println("Maximum number of forms reached. Cannot create new form.");
                 }else{
                     pplForm.createForm(); //create form
                 }   
