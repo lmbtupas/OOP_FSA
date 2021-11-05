@@ -292,7 +292,7 @@ public class Form {
 
         for(int i = 0; i < formsList.length; i++){
             if(formsList[i][0] != null){ //checks if there is a form
-                System.out.println("Form " + String.valueOf(i)); //show form num if form exists
+                System.out.println("Form " + String.valueOf(i + 1)); //show form num if form exists
             }
         }       
 
