@@ -240,13 +240,6 @@ public class Form {
         formsList [formNum][15] = h2;
         formsList [formNum][16] = h3;
 
-
-        for(String[] r:formsList){ //prints forms array
-            for(String c:r){
-                System.out.print(c + " ");
-            }
-            System.out.println();
-        }
     }
 
     public void saveToFile() throws IOException{ //save the array of forms to a text file

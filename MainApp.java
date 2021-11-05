@@ -3,7 +3,7 @@ import java.util.*;
 
 public class MainApp {
 
-    static void showMenu(){ //idk if put in new class....
+    static void showMenu(){ 
         System.out.println("==================");
         System.out.println("Input a number to:");
         System.out.println("1 - Create form");
@@ -20,13 +20,12 @@ public class MainApp {
         int number = 0;
         Form pplForm = new Form(); //create Form object
 
+
         try{
             pplForm.readFileToArr();
-            System.out.println("read");
         }catch(Exception e){
-            System.out.println(e);
-            System.out.println("No file");
-        }
+            System.out.println(e);}
+
 
         while(number != 5){ //as long as user does not exit program keep goin
             
@@ -75,6 +74,7 @@ public class MainApp {
         }
         in.close();
         
+
         try {
             pplForm.saveToFile();
         } catch(Exception e){
