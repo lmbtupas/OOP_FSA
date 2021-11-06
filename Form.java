@@ -97,7 +97,7 @@ public class Form {
 
     public Boolean checkIfArrayFull(){
         for(int i =0; i<4;i++){
-            if(formsList[0][0]== null){
+            if(formsList[i][0]== null){
                 return false;
             }
         }
